@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xeonselina.github.io/blog/</id>
     <title>JimmyPan的技术博客</title>
-    <updated>2019-05-31T12:43:17.306Z</updated>
+    <updated>2019-05-31T12:45:42.688Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xeonselina.github.io/blog/"/>
     <link rel="self" href="https://xeonselina.github.io/blog//atom.xml"/>
@@ -75,7 +75,7 @@ func intToRoman(num int) string {
 <h2 id="tips">Tips:</h2>
 <p>在折腾了接近1星期的rook-ceph后，才发现ceph的block storage要求有一个非系统的磁盘，并且没有被挂载，osd pod才会启动，</p>
 <h2 id="share">Share:</h2>
-<p>https://makex.gitbook.io/a-byte-of-kubernetes/4.rook-and-ceph  ceph和rook的学习笔记</p>
+<p><a href="https://makex.gitbook.io/a-byte-of-kubernetes/4.rook-and-ceph">ceph和rook的学习笔记</a></p>
 ]]></content>
     </entry>
     <entry>
