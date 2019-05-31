@@ -1,15 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xeonselina.github.io/blog/</id>
-    <title>Gridea</title>
-    <updated>2019-05-31T12:16:29.358Z</updated>
+    <title>JimmyPan的技术博客</title>
+    <updated>2019-05-31T12:39:03.606Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xeonselina.github.io/blog/"/>
     <link rel="self" href="https://xeonselina.github.io/blog//atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://xeonselina.github.io/blog//images/avatar.png</logo>
     <icon>https://xeonselina.github.io/blog//favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <rights>All rights reserved 2019, JimmyPan的技术博客</rights>
+    <entry>
+        <title type="html"><![CDATA[ARTS_01]]></title>
+        <id>https://xeonselina.github.io/blog//post/arts_01</id>
+        <link href="https://xeonselina.github.io/blog//post/arts_01">
+        </link>
+        <updated>2019-05-31T12:18:47.000Z</updated>
+        <content type="html"><![CDATA[<p>1.每周至少做一个 leetcode 的算法题
+2.阅读并点评至少一篇英文技术文章
+3.学习至少一个技术技巧
+4.分享一篇有观点和思考的技术文章</p>
+<h2 id="a">A:</h2>
+<h3 id="题目">题目</h3>
+<ul>
+<li><a href="https://leetcode.com/problems/integer-to-roman/submissions/">把数字转换成罗马数字</a></li>
+</ul>
+<p>就是把数字变罗马数字。
+一开始看规则好像有点复杂，后来灵光一现，其实就是把所有规则列出来一个一个拼进去就好了。</p>
+<pre><code class="language-go">var romanMap = map[int]string{
+	1000: &quot;M&quot;,
+	900: &quot;CM&quot;,
+	500: &quot;D&quot;,
+	400: &quot;CD&quot;,
+	100: &quot;C&quot;,
+	90: &quot;XC&quot;,
+	50: &quot;L&quot;,
+	40: &quot;XL&quot;,
+	10: &quot;X&quot;,
+	9: &quot;IX&quot;,
+	5: &quot;V&quot;,
+	4: &quot;IV&quot;,
+	1: &quot;I&quot;,
+}
+
+var nums = [13]int{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1}
+
+func intToRoman(num int) string {
+	var sb strings.Builder
+	for _, v := range nums{
+		str := romanMap[v]
+		for {
+			if num - v &gt;= 0{
+				num = num - v
+				sb.WriteString(str)
+			} else{
+				break
+			}
+		}
+	}
+	return sb.String()
+}
+</code></pre>
+<p>##R:</p>
+<ul>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_ceph_storage/1.2.3/html/red_hat_ceph_architecture/storage_cluster_architecture">ceph架构设计详解</a></li>
+<li><a href="!https://rook.io/docs/rook/v1.0/ceph-storage.html">rook简单说明</a></li>
+</ul>
+<ol>
+<li>了解了rook和ceph是什么</li>
+<li>了解了rook是怎么和ceph交互的，又是怎么和kubernetes交互的</li>
+<li>了解了ceph的架构</li>
+<li>了解了ceph crush算法的大概实现</li>
+</ol>
+<p>##T:
+在折腾了接近1星期的rook-ceph后，才发现ceph的block storage要求有一个非系统的磁盘，并且没有被挂载，osd pod才会启动，</p>
+<p>##S:
+https://makex.gitbook.io/a-byte-of-kubernetes/4.rook-and-ceph  ceph和rook的学习笔记</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://xeonselina.github.io/blog//post/hello-gridea</id>
